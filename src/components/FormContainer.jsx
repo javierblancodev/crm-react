@@ -22,8 +22,24 @@ const FormContainer = () => {
                         .typeError('Phone must be a valid number'), // Some field objects like phone does not take an argument to write the message so we can use the typeError object to overwrite the default message
     })
 
-    function handleSubmit(values) {
-        console.log(values);
+    const handleSubmit = async (values) => {
+        try {
+            const url = 'http://localhost:4000/customers';
+
+            const response = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log(response);
+            const result = await response.json()
+            console.log(result);
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
