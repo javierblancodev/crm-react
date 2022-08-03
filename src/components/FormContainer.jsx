@@ -1,10 +1,13 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import Warning from './Warning';
 
 const FormContainer = () => {
+
+    const navigate = useNavigate();
 
     const newCustomerSchema = Yup.object().shape({
             name: Yup.string()
@@ -37,6 +40,8 @@ const FormContainer = () => {
             const result = await response.json()
             console.log(result);
 
+            navigate('/customers')
+
         } catch (error) {
             console.log(error);
         }
@@ -54,8 +59,11 @@ const FormContainer = () => {
                     comments: ''
                 }}
 
-                onSubmit={(values) => {
-                    handleSubmit(values);
+                onSubmit={ async (values, {resetForm}) => {
+                    // Stop the workflow until the handleSubmit function is completey done
+                    await handleSubmit(values);
+
+                    resetForm();
                 }}
 
                 validationSchema={newCustomerSchema}
