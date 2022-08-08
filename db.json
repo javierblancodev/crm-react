@@ -7,6 +7,22 @@
       "phone": "123456789",
       "comments": "Welcome!!",
       "id": 1
+    },
+    {
+      "name": "Javier",
+      "business": "JCB",
+      "email": "correo@correo.com",
+      "phone": "123456788",
+      "comments": "New Customer",
+      "id": 2
+    },
+    {
+      "name": "Carolina",
+      "business": "JCB",
+      "email": "carolina@correo.com",
+      "phone": "987654321",
+      "comments": "Referred by other customer",
+      "id": 3
     }
   ]
 }
