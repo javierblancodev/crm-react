@@ -15,7 +15,7 @@ const Layout = () => {
                 <nav className='mt-10'>
                     {/* In react, we use the 'Link' tag/component that must be imported instead of the 'a' tag so that we avoid reloading the page when clicking on the link. We must also sustitute href for to */}
                     {/* There is a similar tag/component called navlink that is also imported from react-router-dom*/}
-                    <Link className={`${currentUrl === '/customers' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300`} to="/customers">Customer</Link>
+                    <Link className={`${currentUrl === '/customers' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300`} to="/customers">Customers</Link>
                     <Link className={`${currentUrl === '/customers/new' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300`} to="/customers/new">New customer</Link>
                 </nav>
             </div>
