@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "startserver": "json-server --watch db.json --port 4000"
+    "server": "json-server --watch db.json --port 4000",
+    "watch": "npm run server & npm run dev"
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",
