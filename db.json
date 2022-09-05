@@ -9,7 +9,7 @@
       "id": 1
     },
     {
-      "name": "Javier",
+      "name": "Javier - Updated",
       "business": "JCB",
       "email": "correo@correo.com",
       "phone": "123456788",
@@ -23,6 +23,14 @@
       "phone": "987654321",
       "comments": "Referred by other customer",
       "id": 3
+    },
+    {
+      "name": "Carlos Bobo",
+      "business": "Carlos Trading",
+      "email": "correo@correo.com",
+      "phone": "43545656567",
+      "comments": "Trading Agency",
+      "id": 4
     }
   ]
 }
