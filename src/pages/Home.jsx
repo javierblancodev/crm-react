@@ -19,7 +19,32 @@ const Home = () => {
         }
 
         getCustomersAPI();
-    }, [] )
+    }, [] );
+
+    const handleDelete = async (id) => {
+        const approval = confirm('Are you sure you want to delete this customer?')
+
+        if(approval) {
+            try {
+                const url = `http://localhost:4000/customers/${id}`;
+                // console.log(url);
+                const response = await fetch(url, {
+                    method: 'DELETE'
+                });
+                await response.json();
+
+                // The instace is now delete but our app still show the previous list of customers until it is the page is reloaded and a new get request is made. Two options then:
+                // 1. reload the page to issue a new get request against the now up-to-date db
+                // location.reload(); // bad performance
+                // 2. Simply update the state that contains the customers to display them in real time
+                const updatedCustomersList = customers.filter(customer => customer.id !== id);
+                setCustomers(updatedCustomersList);
+
+            } catch (error) {
+                
+            }
+        }
+    }
 
     return (
         <>
@@ -42,6 +67,7 @@ const Home = () => {
                             <Customer 
                                 key={customer.id}
                                 customer={customer}
+                                handleDelete={handleDelete}
                             />
                         ))
                     }
