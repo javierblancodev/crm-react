@@ -8,6 +8,10 @@ import ViewCustomer from './pages/ViewCustomer';
 
 function App() {
 
+  // we can access the Vite object, which contains the environment variables among others, as follows:
+  // we defined the environment variables VITE_API_URL in the .env files (read vite docs to find how they easily works)
+  console.log(import.meta.env.VITE_API_URL);
+
   return (
     <BrowserRouter>
       <Routes>

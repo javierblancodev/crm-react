@@ -7,7 +7,7 @@ const Home = () => {
 
     useEffect( () => {
         const getCustomersAPI = async function() {
-            const url = 'http://localhost:4000/customers'
+            const url = import.meta.env.VITE_API_URL;
             try {
                 const response = await fetch(url);
                 const result = await response.json();
@@ -26,7 +26,7 @@ const Home = () => {
 
         if(approval) {
             try {
-                const url = `http://localhost:4000/customers/${id}`;
+                const url = `${import.meta.env.VITE_API_URL}/${id}`;
                 // console.log(url);
                 const response = await fetch(url, {
                     method: 'DELETE'
@@ -41,7 +41,7 @@ const Home = () => {
                 setCustomers(updatedCustomersList);
 
             } catch (error) {
-                
+                console.log(error);
             }
         }
     }

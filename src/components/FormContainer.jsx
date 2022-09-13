@@ -31,7 +31,7 @@ const FormContainer = ({customer, loading}) => {
             let response;
 
             if (customer.id) {
-                const url = `http://localhost:4000/customers/${customer.id}`;
+                const url = `${import.meta.env.VITE_API_URL}/${customer.id}`;
 
                 response = await fetch(url, {
                     method: 'PUT',
@@ -41,7 +41,7 @@ const FormContainer = ({customer, loading}) => {
                     }
                 });
             } else {
-                const url = 'http://localhost:4000/customers';
+                const url = import.meta.env.VITE_API_URL;
 
                 response = await fetch(url, {
                     method: 'POST',

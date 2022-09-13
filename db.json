@@ -7,14 +7,6 @@
       "phone": "123456789",
       "comments": "Welcome!!",
       "id": 1
-    },
-    {
-      "name": "Carlos Bobo",
-      "business": "Carlos Trading",
-      "email": "correo@correo.com",
-      "phone": "43545656567",
-      "comments": "Trading Agency",
-      "id": 4
     }
   ]
 }
